@@ -7,23 +7,19 @@ class _GaugesEvents
   createIframe: ->
     iframe = document.createElement 'iframe'
     iframe.id = 'gauges-events-tracker'
-    iframe.style.width = 0
-    iframe.style.height = 0
-    iframe.style.border = 0
+    iframe.style.cssText = 'width:0;height:0;border:0'
 
     document.body.appendChild iframe
     iframe
 
   initTrackEvents: ->
-    links = []
     domLinks = if document.querySelector
         document.querySelectorAll '[data-gauges-event]'
       else
         (elem for elem in document.getElementsByTagName('*') when elem.hasAttribute('data-gauges-event'))
 
     # Convert NodeList into Array
-    for link in domLinks
-      links.push link
+    links = [].slice.call(domLinks, 0)
 
     [eventMethod, eventName] = if window.addEventListener
         ['addEventListener', 'click']
