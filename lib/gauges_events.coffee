@@ -13,15 +13,13 @@ class _GaugesEvents
     iframe
 
   initTrackEvents: ->
-    links = []
     domLinks = if document.querySelector
         document.querySelectorAll '[data-gauges-event]'
       else
         (elem for elem in document.getElementsByTagName('*') when elem.hasAttribute('data-gauges-event'))
 
     # Convert NodeList into Array
-    for link in domLinks
-      links.push link
+    links = [].slice.call(domLinks, 0)
 
     [eventMethod, eventName] = if window.addEventListener
         ['addEventListener', 'click']
