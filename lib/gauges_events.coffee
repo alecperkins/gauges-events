@@ -23,9 +23,9 @@ class _GaugesEvents
       links.push link
 
     # Use Array::forEach method for its closure
-    links.forEach (link) =>
+    links.forEach (link) ->
       data = link.getAttribute 'data-gauges-event'
-      link.addEventListener 'click', (e) =>
+      link.addEventListener 'click', (e) ->
         _GaugesEvents.trackEvent data
 
   @trackEvent: (event) ->
