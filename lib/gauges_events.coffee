@@ -22,11 +22,11 @@ class _GaugesEvents
     for link in domLinks
       links.push link
 
-    # Use Array::forEach method for its closure
-    links.forEach (link) ->
-      data = link.getAttribute 'data-gauges-event'
-      link.addEventListener 'click', (e) ->
-        _GaugesEvents.trackEvent data
+    for link in links
+      do (link) ->
+        data = link.getAttribute 'data-gauges-event'
+        link.addEventListener 'click', (e) ->
+          _GaugesEvents.trackEvent data
 
   @trackEvent: (event) ->
     _GaugesEvents.iframe.src = "/gauges?event=#{event}"
