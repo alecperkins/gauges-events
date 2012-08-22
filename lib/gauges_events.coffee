@@ -22,10 +22,15 @@ class _GaugesEvents
     for link in domLinks
       links.push link
 
+    [eventMethod, eventName] = if window.addEventListener
+        ['addEventListener', 'click']
+      else
+        ['attachEvent', 'onclick']
+
     for link in links
       do (link) ->
         data = link.getAttribute 'data-gauges-event'
-        link.addEventListener 'click', (e) ->
+        link[eventMethod] eventName, (e) ->
           _GaugesEvents.trackEvent data
 
   @trackEvent: (event) ->
