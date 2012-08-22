@@ -7,6 +7,9 @@ class _GaugesEvents
   createIframe: ->
     iframe = document.createElement 'iframe'
     iframe.id = 'gauges-events-tracker'
+    iframe.style.width = 0
+    iframe.style.height = 0
+    iframe.style.border = 0
 
     document.body.appendChild iframe
     iframe
