@@ -16,7 +16,10 @@ class _GaugesEvents
 
   initTrackEvents: ->
     links = []
-    domLinks = document.querySelectorAll '[data-gauges-event]'
+    domLinks = if document.querySelector
+        document.querySelectorAll '[data-gauges-event]'
+      else
+        (elem for elem in document.getElementsByTagName('*') when elem.hasAttribute('data-gauges-event'))
 
     # Convert NodeList into Array
     for link in domLinks
