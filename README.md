@@ -13,9 +13,18 @@ That’s it\*! It really *is* that simple. It creates an iframe and tells it to 
 
 ![Gauges dashboard](https://s3.amazonaws.com/gauges-events/dashboard.png)
 
+### Custom triggering
+```html
+<script type="text/javascript">
+  GaugesEvents.trackEvent('Ads|Apple|Click')
+  GaugesEvents.trackEvent('[Contact page] vcard download')
+  GaugesEvents.trackEvent('Contact: Submit form')
+</script>
+```
+
 \* Okay, you do need some — very very basic — server setup.
 
-## Server settings (Sinatra)
+## Server settings example (Sinatra)
 ```rb
 get '/gauges' do
   %(
@@ -35,13 +44,4 @@ get '/gauges' do
     </script>
   )
 end
-```
-
-## Custom triggering
-```html
-<script type="text/javascript">
-  GaugesEvents.trackEvent('Ads|Apple|Click')
-  GaugesEvents.trackEvent('[Contact page] vcard download')
-  GaugesEvents.trackEvent('Contact: Submit form')
-</script
 ```
