@@ -51,7 +51,7 @@ Don’t forget to edit `YOUR-GAUGES-ID`
 
 ### Development
 If you have no clue how to manually compile CoffeeScript, I’d suggest a tool like [CodeKit](http://incident57.com/codekit/) or [LiveReload](http://livereload.com).<br>
-Personally (when in a non-sprockets friendly environment) I simply use [this handy TextMate command](https://gist.github.com/1993872).<br>
+Personally (when in a non-sprockets friendly environment) I simply use [this handy TextMate command](https://gist.github.com/3422110).<br>
 
 ### Production version
 ```sh
