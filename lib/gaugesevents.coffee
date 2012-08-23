@@ -28,6 +28,7 @@ class _GaugesEvents
         data = link.getAttribute 'data-gauges-event'
         link[eventMethod] eventName, (e) ->
           _GaugesEvents.trackEvent data
+        , false
 
   @trackEvent: (event) ->
     _GaugesEvents.iframe.src = "/gauges?event=#{event}"
