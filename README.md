@@ -1,7 +1,5 @@
-# [Gaug.es](http://get.gaug.es) Custom Events Tracker
-
 ## Usage
-Add the `gaugesevents.js` at the bottom of your page.<br>
+Add the `gaugesevents.min.js` at the bottom of your page.<br>
 It will automatically look for links with the `data-gauges-event` attribute:
 
 ```html
@@ -9,8 +7,7 @@ It will automatically look for links with the `data-gauges-event` attribute:
 <a href="#pause" data-gauges-event="[Index] Promo video: Pause">Pause</a>
 ```
 
-That’s it\*! It really *is* that simple. It creates an iframe and tells it to navigate to `/gauges?event=EVENT` where `EVENT` is exactly the `data-gauges-event` attribute value. Said value can be anything, it is totally up to you to make your own pattern.
-
+### ☝ Teh mighty result ☟
 ![Gauges dashboard](https://s3.amazonaws.com/gauges-events/dashboard.png)
 
 ### Custom triggering
@@ -22,6 +19,8 @@ That’s it\*! It really *is* that simple. It creates an iframe and tells it to 
 </script>
 ```
 
+That’s it!\*<br>
+It really *is* that simple. It creates an iframe and tells it to navigate to `/gauges?event=EVENT` where `EVENT` is exactly the `data-gauges-event` attribute value. Said value can be anything, it is totally up to you to make your own pattern.<br><br>
 \* Okay, you do need some — very very basic — server setup.
 
 ## Server settings example (Sinatra)
@@ -45,3 +44,20 @@ get '/gauges' do
   )
 end
 ```
+Don’t forget to edit `YOUR-GAUGES-ID`
+
+## Compiling & Minifying
+[Yes, the source is in CoffeeScript](http://vimeo.com/35258313)
+
+### Development
+If you have no clue how to manually compile CoffeeScript, I’d suggest a tool like [CodeKit](http://incident57.com/codekit/) or [LiveReload](http://livereload.com).<br>
+Personally (when in a non-sprockets friendly environment) I simply use [this handy TextMate command](https://gist.github.com/1993872).<br>
+
+### Production version
+```sh
+$ bundle install
+$ rake compile
+```
+
+## Mucho thanks
+[@rafBM](https://github.com/rafBM) - ([#1](https://github.com/EtienneLem/gauges-events/pull/1), [#2](https://github.com/EtienneLem/gauges-events/pull/2))
