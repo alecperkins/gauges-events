@@ -1,7 +1,7 @@
 # [Gaug.es](http://get.gaug.es) Custom Events Tracker
 
 ## Usage
-Add the `gauges_events.js` at the bottom of your page.<br>
+Add the `gaugesevents.js` at the bottom of your page.<br>
 It will automatically look for links with the `data-gauges-event` attribute:
 
 ```html
