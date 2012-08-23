@@ -60,7 +60,7 @@ $ rake compile
 ```
 
 ## Mucho thanks
-[@rafBM](https://github.com/rafBM) - ([#1](https://github.com/EtienneLem/gauges-events/pull/1), [#2](https://github.com/EtienneLem/gauges-events/pull/2))
+[@rafBM](https://github.com/rafBM) - ([#1](https://github.com/EtienneLem/gauges-events/pull/1), [#2](https://github.com/EtienneLem/gauges-events/pull/2), [#3](https://github.com/EtienneLem/gauges-events/pull/3))
 
 ## License
 Copyright (c) 2012 Etienne Lemay etienne@heliom.ca, [@EtienneLem](https://twitter.com/EtienneLem)
