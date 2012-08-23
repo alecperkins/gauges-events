@@ -16,7 +16,7 @@ class _GaugesEvents
     links = if document.querySelector
         document.querySelectorAll '[data-gauges-event]'
       else
-        (elem for elem in document.getElementsByTagName('*') when elem.hasAttribute('data-gauges-event'))
+        (elem for elem in document.getElementsByTagName('*') when elem.getAttribute('data-gauges-event'))
 
     [eventMethod, eventName] = if window.addEventListener
         ['addEventListener', 'click']
