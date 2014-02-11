@@ -1,8 +1,8 @@
 class _GaugesEvents
 
   constructor: ->
-    _GaugesEvents.iframe = this.createIframe()
-    this.initTrackEvents()
+    @iframe = this.createIframe()
+    @initTrackEvents()
 
   createIframe: ->
     iframe = document.createElement 'iframe'
@@ -24,14 +24,14 @@ class _GaugesEvents
         ['attachEvent', 'onclick']
 
     for link in links
-      do (link) ->
+      do (link) =>
         data = link.getAttribute 'data-gauges-event'
-        link[eventMethod] eventName, (e) ->
-          _GaugesEvents.trackEvent data
+        link[eventMethod] eventName, (e) =>
+          @trackEvent data
         , false
 
-  @trackEvent: (event) ->
-    _GaugesEvents.iframe.src = "/gauges?event=#{event}"
+  trackEvent: (event) ->
+    @iframe.src = "/gauges?event=#{event}"
 
 
 # Singleton
